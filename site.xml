@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This file controls the operation of our little php "cms" system.
+
+Every page must be in a section. Ordering of pages and sections goes in 
+the same order as the elements are listed in this file. Name attribute is 
+printed to be shown to the user, and id is used to select the page. If no 
+id is selected OR a non-existant id is selected, the system will default 
+to the first page of the first section of this file. If this file does not 
+exist or cannot be read or does not have even one page in even one section, 
+the php program will show an error message and quit.
+-->
+<site>
+	<htmltitle>This is only an example.</htmltitle>
+	<siteheader>Example Site Header </siteheader>
+	<toc>
+		<section name="Example Section">
+			<page name="Example!" id="example" filename="example.shtml"/>
+			<page name="About..." id="about" filename="about.shtml"/>
+		</section>
+	</toc>
+</site>
+
