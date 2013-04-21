@@ -23,35 +23,9 @@
 <h2>But... WHY?</h2>
 <div><p>Short answer: Because I wanted to. :P </p></div>
 
-<div><p>Long answer: there are actually some philosophical 
-musings I'd really like to go into here. Please bear with me as 
-I'm gonna go and do just that.</p>
-
-<p>There are needs for every system worth a damn that 
-   either get satisfied or not by the system. Usually, if 
-   the system really is worth a damn, those needs are at least 
-   somewhat satisfied. But what about <em>beyond</em> 
-   those needs? Sometimes, there's a good case of building 
-   a system that goes to great lengths at fulfilling 
-   needs that were but a pipe dream of the designers 
-   when the system was going to be initially deployed. 
-   Even more there is usually a case of supporting 
-   the modification of the system in distant future for 
-   such needs. Good coding practices are, for the most parts, 
-   just attempts to ease your and your colleagues 
-   future work in supporting the systems.</p>
-
-<p>...but then there are also systems (and places, and needs) 
-   where the complete lack of extraneous 
-   cruft, featuritis and bloat of pipe-dream future use that gets 
-   introduced by such "future-proofing" your own work is 
-   one of the <em>most important features</em> of the system.</p>
-<p>This is one of those systems. It serves a very specific 
-   and limited set of needs, collected from no one else 
-   but the original author, and it tries to stay true 
-   to those needs and leaving <em>everything else out</em>.
-   And yes, in this case, it is a feature.</p>
-<h2>Fine... what are those needs, then?</h2>
+<div><p>Long answer: I wanted a system to fulfill my needs. 
+     And secondly, I did it as a small learning experience.</p>
+<p>The needs I tried to fulfill:</p>
 <ul>
 	<li>Sometimes, I just want to put up a set of pages on the interwebs. </li>
 	<ul>
@@ -97,10 +71,10 @@ being as easy as "write the content in one place, update at most one other, cent
 to make the changes visible to other pages". <br/>
 <em><strong>I especially do not want to have to update cross-linking to 
 all the 10+ other pages on a site when I add one new page, even if writing static html+css is otherwise fine.</strong></em>
-I also see absolutely no reason why should I have to write those &lt;html&gt;&lt;head&gt;... -tagsoup/stuff on 
+I also see absolutely no reason why should I have to write those &lt;html&gt;&lt;head&gt;s on 
 every piece of content I conjure up by hand. It's there once, and that's going to be enough for all 
 pages. Sure, I do understand why it has to be there when a WWW browser shows stuff to readers. But 
-writing it on every instance by myself? No way man. No way in hell. </p>
+writing it on every instance by myself? No thanks. I'm too lazy for that. </p>
 
 <p>So... it's going to be this way:
 <ul>
@@ -122,8 +96,7 @@ Using a database as a backend for a website is neither bad nor stupid, claiming 
 indeed. What I'm trying to get across here is that there are niches for doing stuff without a database and 
 this thing tries to fill one such niche for myself. If you don't feel like you have any need for this kind of 
 approach, that's fine. It's no skin off my nose if you don't. I'm just releasing this thing in the vain 
-hope someone finds it useful to him/her. Be my guest: <a href="supersimplecms.zip">download link</a>. 
-I'll get around of putting it up on github or whatever at some time in future.
+hope someone finds it useful to him/her. Be my guest: <a href="https://github.com/tommituura/supersimplecms">github link</a>. 
 </p>
 </div>
 <div>
@@ -131,5 +104,10 @@ I'll get around of putting it up on github or whatever at some time in future.
 <p>Maybe. Probably. Another part of this was me being willing to do some PHP as a learning exercise. 
 Also, I haven't yet understood a way to do that highlight thing on the navbar with the ease 
 I want it to happen, with SSI. Yes, that thing is totally worth of 250 lines of PHP. </p>
-
+<h2>It looks ugly as hell.</h2>
+<p>I'm aware. I'll fix that css someday. In the meantime, you can go over the html this 
+   system spews out and fix the style.css for yourself. If you want to throw a pull request 
+   to github, I'd appreciate that too, thanks. :) Do note the license though, your contributions 
+   will end up under the same license.
+</p>
 </div>
