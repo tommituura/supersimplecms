@@ -10,3 +10,8 @@ Quick Start guide
 * Make sure all the files are accessible to the www-server process. Note: style.css must be directly readable from web, as well as any statically linked files like images etc. Depending on how your PHP installation is set up, this probably differs how php scripts need to be given rights.
 * Point your browser to the url where said web server runs the index.php.
 
+Example
+=======
+
+[http://ttuura.users.cs.helsinki.fi/supersimplecms/]
+
