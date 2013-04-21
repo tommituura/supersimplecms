@@ -63,23 +63,6 @@
 .selected {
 	background: #98AFC7;
 }
-.aikataulu {
-	border: 1px;
-}
-.aikataulu_aika {
-	width: 50px;
-}
-.aikataulu_opiskelija {
-	width: 1000px;
-}
-.deadlinet {
-	border: 1px;
-}
-.deadlinet_paiva {
-	width: 100px;
-}
-.deadlinet_asia {
-}
 .lastmodified { 
 	vertical-align: bottom;
 	margin-bottom: 0%;
