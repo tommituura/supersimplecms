@@ -13,5 +13,5 @@ Quick Start guide
 Example
 =======
 
-[http://ttuura.users.cs.helsinki.fi/supersimplecms/]
+http://ttuura.users.cs.helsinki.fi/supersimplecms/
 
