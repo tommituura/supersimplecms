@@ -1,0 +1,135 @@
+<h2>What is this, really?</h2>
+<p>This is just a PHP script hodgepodge that allows 
+   you to create a website like this, consisting of 
+   a navbar/table of contents and writing the actual 
+   content pages separately without all the surrounding 
+   html stuff.</p>
+<p>Of course, if you look around, you'll see that 
+   the script allows you to use CSS style in <tt>style.css</tt>
+   to modify the outlook of this website <em>and</em> also 
+   add your own javascript to the mix if you want to. Just 
+   put it into the correct place in <tt>index.php</tt> and 
+   you're good to go!</p>
+<p>The only limitation of this "CMS" system is that you 
+   must edit the files manually; this does not and will 
+   not have any kind of live editing capabilities. Everything 
+   is just serving some static files according to the GET 
+   parameter. And also according to what is in <tt>site.xml</tt>,
+   which you also have to edit by hand. </p>
+<p>In other words, the #1 feature for this system is not 
+   being dependant on having a database system available. 
+   Just a web server with PHP enabled, and a little bit of 
+   disk space.</p>
+<h2>But... WHY?</h2>
+<div><p>Short answer: Because I wanted to. :P </p></div>
+
+<div><p>Long answer: there are actually some philosophical 
+musings I'd really like to go into here. Please bear with me as 
+I'm gonna go and do just that.</p>
+
+<p>There are needs for every system worth a damn that 
+   either get satisfied or not by the system. Usually, if 
+   the system really is worth a damn, those needs are at least 
+   somewhat satisfied. But what about <em>beyond</em> 
+   those needs? Sometimes, there's a good case of building 
+   a system that goes to great lengths at fulfilling 
+   needs that were but a pipe dream of the designers 
+   when the system was going to be initially deployed. 
+   Even more there is usually a case of supporting 
+   the modification of the system in distant future for 
+   such needs. Good coding practices are, for the most parts, 
+   just attempts to ease your and your colleagues 
+   future work in supporting the systems.</p>
+
+<p>...but then there are also systems (and places, and needs) 
+   where the complete lack of extraneous 
+   cruft, featuritis and bloat of pipe-dream future use that gets 
+   introduced by such "future-proofing" your own work is 
+   one of the <em>most important features</em> of the system.</p>
+<p>This is one of those systems. It serves a very specific 
+   and limited set of needs, collected from no one else 
+   but the original author, and it tries to stay true 
+   to those needs and leaving <em>everything else out</em>.
+   And yes, in this case, it is a feature.</p>
+<h2>Fine... what are those needs, then?</h2>
+<ul>
+	<li>Sometimes, I just want to put up a set of pages on the interwebs. </li>
+	<ul>
+		<li>That are linked together, to form a logical collection of a website.</li>
+		<li>I want to be able to easily add a page on the site I have just put up.</li> 
+		<li>I want there to be a header, a navigation bar with some sensible logical order and content of the pages.</li> 
+		<li>I want most of this stuff done automatically for me. </li>
+		<li>Yet, I also want total control of what goes in there and how, and I want to strike the balance there myself.</li>
+	</ul>
+	<li>I want to be able to not worry about a database system.
+	<ul><li>Since I have and want to do all administration there myself, I greatly prefer tools like svn, scp, rsync, git etc 
+	    in backing up and synchronizing whatever is up there.</li>
+	</ul></li>
+	<li>I want to be able to not worry about security problems borne out of data insertion &amp; validation bugs.
+	<ul><li>This just further clarifies how much I despise the idea that everything would be on a database. 
+	    Since I am the only person doing any updates, there's no reason to believe that I can't just edit whatever 
+	    html there is by hand.</li>
+	    <li>Since all meaningful (=persistent) inputs are done by editing files on a web server, there's not really 
+	        any reason to truly sweat over validating incoming data. This saves me <em>a lot</em> of efforts.</li>
+	    <li>Sure, as you can see from the address bar on your browser right now, this system actually takes input 
+	        as HTTP GET parameter. But the thing is, when your true control input is read from a static file, you can 
+	        treat dynamic inputs as nothing but simple hints of what kind of would be a good idea to do, and if that's 
+	        not reasonable action you are allowed to either default to something you know to be safe and sane, or barring 
+	        that, you are allowed (and expected) to fail early and loudly... things just got a hell of a lot easier 
+	        on the security front of things. I'm quite confident that any and all possible security bugs in my system are 
+	        bugs in PHP codebase or installation setup of the server. To the best of my knowledge, this system does 
+	        <em>nothing</em> that would, even in theory, expose anything to any (remote) vulnerabilities, unless 
+	        GET parameters are inherently unsafe to use in PHP, which should not be the case in this day and age. And 
+	        I do actually take care of the off chances someone tries to attack that way. It is validated with all due 
+	        diligence. It is validated to exist, to be a string AND to match one of the page id's that are statically 
+	        defined in the simple central XML file. If any of those tests fail, the value is discarded without 
+	        any apologies.</li>
+	</ul>
+	</li>
+	
+	<li>I want to have total control of things (at the file system level) that go there, and I actually want to edit the html by hand.</li>
+	<li>I do not want to add another web service account to the list of accounts whose passwords I have to keep stored securely 
+	    (on a post-it note on my desk).</li>
+</ul>
+<p>In other words, I want the security and ease of control of static pages 
+on a remote server accessed through ssh, and I want adding pages to a site 
+being as easy as "write the content in one place, update at most one other, central, place 
+to make the changes visible to other pages". <br/>
+<em><strong>I especially do not want to have to update cross-linking to 
+all the 10+ other pages on a site when I add one new page, even if writing static html+css is otherwise fine.</strong></em>
+I also see absolutely no reason why should I have to write those &lt;html&gt;&lt;head&gt;... -tagsoup/stuff on 
+every piece of content I conjure up by hand. It's there once, and that's going to be enough for all 
+pages. Sure, I do understand why it has to be there when a WWW browser shows stuff to readers. But 
+writing it on every instance by myself? No way man. No way in hell. </p>
+
+<p>So... it's going to be this way:
+<ul>
+	<li>Totally file-based, never requiring a database.</li>
+	<li>Totally extensible by everything you can put on a static webpage.</li>
+	<li>Totally not using sessions for anything.</li>
+	<li>Totally only doing the tedious part of updating cross-references to pages on a navbar thing on a site.</li>
+	<li>Totally Free Software, using a <a href="http://sam.zoy.org/wtfpl/">very permissive</a> license.</li>
+	<li>Totally allowing adding CSS+JavaScript to spice things up visually whenever the site admin gets around to do that.</li>
+	<li>Totally relying the people adding content to know what they are doing.</li>
+	<li>Totally NOT going to expand into a full-blown CMS with logins and databases and other bells and whistles, like, ever. 
+	    There are enough of those systems around and if you want one of them, good for you, this bunch of php here 
+	    is <em>seriously not for you</em>. So, don't ever expect it to be.</li>
+</ul>
+</p>
+
+<p>I ask that you take nothing here as endorsement for or against any solutions for a given problem. 
+Using a database as a backend for a website is neither bad nor stupid, claiming such would be silly 
+indeed. What I'm trying to get across here is that there are niches for doing stuff without a database and 
+this thing tries to fill one such niche for myself. If you don't feel like you have any need for this kind of 
+approach, that's fine. It's no skin off my nose if you don't. I'm just releasing this thing in the vain 
+hope someone finds it useful to him/her. Be my guest: <a href="supersimplecms.zip">download link</a>. 
+I'll get around of putting it up on github or whatever at some time in future.
+</p>
+</div>
+<div>
+<h2>But... wouldn't it all be easier with SSI includes?</h2>
+<p>Maybe. Probably. Another part of this was me being willing to do some PHP as a learning exercise. 
+Also, I haven't yet understood a way to do that highlight thing on the navbar with the ease 
+I want it to happen, with SSI. Yes, that thing is totally worth of 250 lines of PHP. </p>
+
+</div>
