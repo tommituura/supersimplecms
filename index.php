@@ -39,8 +39,11 @@ $pageSelection = getSelectionParameter($_GET);
 <head>
 	<meta charset="UTF-8" />
 	<title><?php print (string)$site->getTitle(); ?></title>
-	<link rel="stylesheet" href="style.css" type="text/css"/>
-	<!-- You can add your own javascripts here, if you want. -->
+
+	<!-- <link rel="stylesheet" href="style.css" type="text/css"/> -->
+    <link rel="stylesheet/less" type="text/css" href="styles.less" />
+	<script src="less.js" type="text/javascript"></script>
+    <!-- You can add your own javascripts here, if you want. -->
 </head>
 <body>
 <div class="container">
