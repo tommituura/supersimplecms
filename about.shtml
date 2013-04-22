@@ -105,8 +105,8 @@ hope someone finds it useful to him/her. Be my guest: <a href="https://github.co
 Also, I haven't yet understood a way to do that highlight thing on the navbar with the ease 
 I want it to happen, with SSI. Yes, that thing is totally worth of 250 lines of PHP. </p>
 <h2>It looks ugly as hell.</h2>
-<p>I'm aware. I'll fix that css someday. In the meantime, you can go over the html this 
-   system spews out and fix the style.css for yourself. If you want to throw a pull request 
+<p>I'm aware. I'll fix that less style someday. In the meantime, you can go over the html this 
+   system spews out and fix the styles.less for yourself. If you want to throw a pull request 
    to github, I'd appreciate that too, thanks. :). 
 </p>
 </div>
