@@ -1,4 +1,6 @@
 @headercolor: #FFCC00;
+@selectedcolor: #98AFC7;
+
 
 .header {
 	position: fixed;
@@ -63,7 +65,7 @@
 }
 
 .selected {
-	background: #98AFC7;
+	background: @selectedcolor;
 }
 .lastmodified { 
 	vertical-align: bottom;
@@ -71,7 +73,6 @@
 	bottom: 0;
 	position: fixed;
 	margin-right: 10px;
-	/* right: 10px; */
 	padding-right: 10px;
 	height: 50px;
 	left: 300px;
