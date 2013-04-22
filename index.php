@@ -8,6 +8,14 @@
  * This is free software. See LICENSE for details.
  ****/
 
+/******************************************************
+ * NOTE: When adding content, you are NOT supposed to 
+ * Change anything in this file. All of the content is 
+ * defined in site.xml and all the *.shtml files.
+ * If you want to add new .less and .js files, then you 
+ * must do it here. 
+ *****************************************************/
+
 echo '<!DOCTYPE html>';
 require_once('site.php');
 
@@ -39,10 +47,12 @@ $pageSelection = getSelectionParameter($_GET);
 <head>
 	<meta charset="UTF-8" />
 	<title><?php print (string)$site->getTitle(); ?></title>
-
+	<?php /* You can add your own less styles here, if you want. 
+	         .less files must be defined before the less.js file. */ ?>
     <link rel="stylesheet/less" type="text/css" href="styles.less" />
 	<script src="less.js" type="text/javascript"></script>
-    <!-- You can add your own javascripts here, if you want. -->
+	<?php /* You can add your own javascripts here, if you want. */ ?>
+
 </head>
 <body>
 <div class="container">
